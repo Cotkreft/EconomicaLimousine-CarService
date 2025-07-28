@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Economica Limousine and Car Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* # Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #092042;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* # Header with logo centered */
+    header {
+      background-color: #092042;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 300px; /* Bigger logo */
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* # Hero Section */
+    .hero {
+      background-color: #092042;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #092042;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease-in-out;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #092042;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      color: #fff;
+      animation: bounce 2s infinite;
+    }
+
+    /* # Section Fade In Animation */
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* # Services Section */
+    .services,
+    .about,
+    .contact {
+      padding: 60px 20px;
+    }
+
+    .services h2,
+    .about h2,
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #092042;
+      font-weight: 700;
+    }
+
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+      border-radius: 8px;
+      color: #092042;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* # About Section */
+    .about {
+      background-color: #092042;
+      color: #fff;
+      border-radius: 10px;
+    }
+
+    /* # Contact Section */
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.8;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .contact-info a {
+      color: #092042;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact .btn {
+      margin: 10px 5px;
+      font-weight: 700;
+    }
+
+    /* # Footer */
+    footer {
+      background-color: #092042;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* # Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    /* # Responsive Styles */
+    @media (max-width: 768px) {
+      .service-cards {
+        flex-direction: column;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- # Header with logo centered -->
+<header>
+  <div class="container">
+    <img src="Logo.png" alt="Economica Limousine Logo" />
+    <nav>
+      <button id="langToggle" style="margin-top: 10px; padding: 8px 15px; font-weight: 700;">Español</button>
+      <ul style="margin-top: 10px;">
+        <li><a href="#services" data-key="navServices">Services</a></li>
+        <li><a href="#about" data-key="navAbout">About</a></li>
+        <li><a href="#contact" data-key="navContact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- # Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h2 data-key="heroTitle">Reliable. Affordable. Professional.</h2>
+    <p data-key="heroSubtitle">Experience premium limousine and car service without the premium price.</p>
+    <a href="#contact" class="btn" data-key="bookRideBtn">Book a Ride</a>
+  </div>
+  <div class="scroll-down">&#8595;</div>
+</section>
+
+<!-- # Services Section -->
+<section id="services" class="services">
+  <div class="container">
+    <h2 data-key="servicesTitle">Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3 data-key="service1Title">Airport Transfers</h3>
+        <p data-key="service1Desc">On-time pickups and drop-offs at all major airports.</p>
+      </div>
+      <div class="card">
+        <h3 data-key="service2Title">Corporate Travel</h3>
+        <p data-key="service2Desc">Executive car services tailored for business professionals.</p>
+      </div>
+      <div class="card">
+        <h3 data-key="service3Title">Special Events</h3>
+        <p data-key="service3Desc">Weddings, proms, parties—arrive in style with Economica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- # About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 data-key="aboutTitle">About Economica</h2>
+    <p data-key="aboutDesc">
+      At Economica Limousine and Car Service, we combine luxury, comfort, and affordability. Whether it’s a business trip or a special occasion, our professional drivers and well-maintained vehicles ensure you get to your destination safely and in style.
+    </p>
+  </div>
+</section>
+
+
+  <!-- # Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+
+      <div class="contact-info">
+        <p><strong>Call Us:</strong> <a href="tel:6104777670">(610) 477-7670</a></p>
+        <p><strong>Email:</strong> <a href="mailto:limousine7carservice@gmail.com">limousine7carservice@gmail.com</a></p>        
+        <p><strong>Instagram:</strong> <a href="https://www.facebook.com/share/1E5YXFVpnK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Economica Limousine & Car Service</a></p>
+      </div>
+
+      <div style="text-align:center; margin-top: 30px;">
+        <a href="tel:6104777670" class="btn">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- # Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Economica Limousine and Car Service. All rights reserved.</p>
+      <p>
+        <a href="mailto:limousine7carservice@gmail.com">Email</a> | 
+        <a href="tel:6104777670">Call</a> | 
+        <a href="https://www.instagram.com/economicalimousinandcarservice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </p>
+    </div>
+  </footer>
+  <!-- Language toggle script -->
+  <script>
+    // Translation data for English and Spanish
+const translations = {
+  en: {
+    navServices: "Services",
+    navAbout: "About",
+    navContact: "Contact",
+    heroTitle: "Reliable. Affordable. Professional.",
+    heroSubtitle: "Experience premium limousine and car service without the premium price.",
+    bookRideBtn: "Book a Ride",
+    servicesTitle: "Our Services",
+    service1Title: "Airport Transfers",
+    service1Desc: "On-time pickups and drop-offs at all major airports.",
+    service2Title: "Corporate Travel",
+    service2Desc: "Executive car services tailored for business professionals.",
+    service3Title: "Special Events",
+    service3Desc: "Weddings, proms, parties—arrive in style with Economica.",
+    
+    // Add these:
+    aboutTitle: "About Economica",
+    aboutDesc: "At Economica Limousine and Car Service, we combine luxury, comfort, and affordability. Whether it’s a business trip or a special occasion, our professional drivers and well-maintained vehicles ensure you get to your destination safely and in style.",
+    
+    langBtn: "Español"
+  },
+  es: {
+    navServices: "Servicios",
+    navAbout: "Acerca de",
+    navContact: "Contacto",
+    heroTitle: "Fiable. Asequible. Profesional.",
+    heroSubtitle: "Experimente un servicio de limusina y coche premium sin el precio premium.",
+    bookRideBtn: "Reservar un viaje",
+    servicesTitle: "Nuestros Servicios",
+    service1Title: "Traslados al aeropuerto",
+    service1Desc: "Recogidas y entregas puntuales en todos los aeropuertos principales.",
+    service2Title: "Viajes corporativos",
+    service2Desc: "Servicios ejecutivos de coches adaptados para profesionales de negocios.",
+    service3Title: "Eventos especiales",
+    service3Desc: "Bodas, bailes, fiestas: llega con estilo con Economica.",
+    
+    // Add these:
+    aboutTitle: "Acerca de Economica",
+    aboutDesc: "En Economica Limousine and Car Service combinamos lujo, comodidad y asequibilidad. Ya sea un viaje de negocios o una ocasión especial, nuestros conductores profesionales y vehículos bien mantenidos garantizan que llegue a su destino de manera segura y con estilo.",
+    
+    langBtn: "English"
+  }
+};
+
+
+    let currentLang = "en"; // Default language
+
+    const langToggleBtn = document.getElementById("langToggle");
+
+    langToggleBtn.addEventListener("click", () => {
+      // Toggle language
+      currentLang = currentLang === "en" ? "es" : "en";
+
+      // Update all elements with data-key attribute
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+        }
+      });
+
+      // Update button text to show the language you can switch TO
+      langToggleBtn.textContent = translations[currentLang].langBtn;
+    });
+  </script>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    // Select all sections for scroll fade-in animation
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
+
