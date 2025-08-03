@@ -79,6 +79,35 @@
     nav a:hover::after {
       width: 100%;
     }
+    
+    #langToggle {
+  margin-top: 10px;
+  padding: 12px 20px;   /* Bigger padding */
+  font-weight: 700;
+  font-size: 1.5rem;    /* Bigger text */
+  cursor: pointer;
+}
+
+nav ul {
+  margin-top: 10px;
+  padding-left: 0;      /* Remove default list padding */
+  list-style: none;     /* Remove bullets */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  font-size: 1.5rem;    /* Bigger nav links */
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
 
     /* # Hero Section */
     .hero {
@@ -156,6 +185,19 @@
       color: #092042;
       font-weight: 700;
     }
+  /* For our service */
+.services h2,
+.about h2 {
+  font-size: 3rem;  /* Here make a big or smal size */
+}
+
+/* For the inside letters */
+.services .card p,
+.about p {
+  font-size: 1.7rem;  /* Here make a big or smal size */
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
 
     .service-cards {
       display: flex;
@@ -283,17 +325,17 @@
 <body>
   <!-- # Header with logo centered -->
 <header>
-  <div class="container">
-    <img src="Logo.png" alt="Economica Limousine Logo" />
-    <nav>
-      <button id="langToggle" style="margin-top: 10px; padding: 8px 15px; font-weight: 700;">Español</button>
-      <ul style="margin-top: 10px;">
-        <li><a href="#services" data-key="navServices">Services</a></li>
-        <li><a href="#about" data-key="navAbout">About</a></li>
-        <li><a href="#contact" data-key="navContact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<div class="container">
+  <img src="Logo.png" alt="Economica Limousine Logo" />
+  <nav>
+    <button id="langToggle">Español</button>
+    <ul>
+      <li><a href="#services" data-key="navServices">Services</a></li>
+      <li><a href="#about" data-key="navAbout">About</a></li>
+      <li><a href="#contact" data-key="navContact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
 </header>
 
 <!-- # Hero Section -->
@@ -312,16 +354,8 @@
     <h2 data-key="servicesTitle">Our Services</h2>
     <div class="service-cards">
       <div class="card">
-        <h3 data-key="service1Title">Airport Transfers</h3>
-        <p data-key="service1Desc">On-time pickups and drop-offs at all major airports.</p>
-      </div>
-      <div class="card">
-        <h3 data-key="service2Title">Corporate Travel</h3>
-        <p data-key="service2Desc">Executive car services tailored for business professionals.</p>
-      </div>
-      <div class="card">
-        <h3 data-key="service3Title">Special Events</h3>
-        <p data-key="service3Desc">Weddings, proms, parties—arrive in style with Economica.</p>
+        <p data-key="serviceDescription1">We make trips to airports like Philadelphia, Newark, and New York.</p>
+        <p data-key="serviceDescription2">We are a taxi company providing efficient and reliable transportation service.</p>
       </div>
     </div>
   </div>
@@ -346,7 +380,7 @@
       <div class="contact-info">
         <p><strong>Call Us:</strong> <a href="tel:6104777670">(610) 477-7670</a></p>
         <p><strong>Email:</strong> <a href="mailto:limousine7carservice@gmail.com">limousine7carservice@gmail.com</a></p>        
-        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/economicalimousinandcarservice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Economica Limousine & Car Service</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/economicalimocarservice" target="_blank" rel="noopener noreferrer">Economica Limousine & Car Service</a></p>
         <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1E5YXFVpnK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Economica Limousine & Car Service</a></p>
 
       </div>
@@ -380,17 +414,10 @@ const translations = {
     heroSubtitle: "Experience premium limousine and car service without the premium price.",
     bookRideBtn: "Book a Ride",
     servicesTitle: "Our Services",
-    service1Title: "Airport Transfers",
-    service1Desc: "On-time pickups and drop-offs at all major airports.",
-    service2Title: "Corporate Travel",
-    service2Desc: "Executive car services tailored for business professionals.",
-    service3Title: "Special Events",
-    service3Desc: "Weddings, proms, parties—arrive in style with Economica.",
-    
-    // Add these:
+    serviceDescription1: "We make trips to airports like Philadelphia, Newark, and New York.",
+    serviceDescription2: "We are a taxi company providing efficient and reliable transportation service.",
     aboutTitle: "About Economica",
     aboutDesc: "At Economica Limousine and Car Service, we combine luxury, comfort, and affordability. Whether it’s a business trip or a special occasion, our professional drivers and well-maintained vehicles ensure you get to your destination safely and in style.",
-    
     langBtn: "Español"
   },
   es: {
@@ -401,20 +428,14 @@ const translations = {
     heroSubtitle: "Experimente un servicio de limusina y coche premium sin el precio premium.",
     bookRideBtn: "Reservar un viaje",
     servicesTitle: "Nuestros Servicios",
-    service1Title: "Traslados al aeropuerto",
-    service1Desc: "Recogidas y entregas puntuales en todos los aeropuertos principales.",
-    service2Title: "Viajes corporativos",
-    service2Desc: "Servicios ejecutivos de coches adaptados para profesionales de negocios.",
-    service3Title: "Eventos especiales",
-    service3Desc: "Bodas, bailes, fiestas: llega con estilo con Economica.",
-    
-    // Add these:
+    serviceDescription1: "Hacemos viajes a aeropuertos como Philadelphia, Newark, New York",
+    serviceDescription2: "Somos una compañía de taxi proporcionamos un servicio de transporte eficiente y confiable",
     aboutTitle: "Acerca de Economica",
     aboutDesc: "En Economica Limousine and Car Service combinamos lujo, comodidad y asequibilidad. Ya sea un viaje de negocios o una ocasión especial, nuestros conductores profesionales y vehículos bien mantenidos garantizan que llegue a su destino de manera segura y con estilo.",
-    
     langBtn: "English"
   }
 };
+
 
 
     let currentLang = "en"; // Default language
