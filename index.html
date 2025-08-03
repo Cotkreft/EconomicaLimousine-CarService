@@ -110,53 +110,61 @@ nav ul li a:hover::after {
 }
 
     /* # Hero Section */
-    .hero {
-      background-color: #092042;
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-      position: relative;
-    }
+  .hero {
+  background: linear-gradient(rgba(9, 32, 66, 0.75), rgba(9, 32, 66, 0.75)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+}
 
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      animation: fadeInDown 1s ease-in-out;
-    }
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      animation: fadeInUp 1s ease-in-out;
-    }
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
 
-    .btn {
-      display: inline-block;
-      background: #092042;
-      color: #fff;
-      padding: 12px 25px;
-      text-decoration: none;
-      border: 2px solid #fff;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      animation: fadeInUp 1s ease-in-out;
-      font-weight: 700;
-    }
+.btn {
+  background: #fff;
+  color: #092042;
+  padding: 16px 36px;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 16px rgba(9, 32, 66, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
 
-    .btn:hover {
-      background: #fff;
-      color: #092042;
-    }
+.btn:hover {
+  background: #092042;
+  color: #fff;
+  transform: scale(1.05);
+}
 
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 30px;
-      color: #fff;
-      animation: bounce 2s infinite;
-    }
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  color: #fff;
+  animation: bounce 2s infinite;
+}
 
     /* # Section Fade In Animation */
     section {
