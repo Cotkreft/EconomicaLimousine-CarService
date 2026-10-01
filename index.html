@@ -1,0 +1,199 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Economica</title> <link rel="icon" href="photo/logo1.png" type="image/png"> <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> </head> <body>
+<header class="header">
+    <a href="#home" class="logo">
+        <img src="photo/logo1.png" alt="Economica Limousine and Car Service Logo">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home" data-language="home">Home</a>
+        <a href="#fleet" data-language="fleet">Fleet</a>
+        <a href="#contact" data-language="contact">Contact</a>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <div class="home-content">
+        <h1 data-language="heroTitle">Welcome to Economica Limousine and Car Service.</h1>
+        <h2 data-language="heroSubtitle">Reliable. Affordable. Professional.</h2>
+        <p data-language="heroText">
+            Experience premium car service without the premium price.
+        </p>
+        <a href="#contact" class="btn" data-language="bookNow">Book Now</a>
+    </div>
+</section>
+
+<section class="about-us" id="about">
+    <img
+        class="about-us-background"
+        src="photo/car.png"
+        alt="Economica taxi car parked on a street for decorative purposes."
+    >
+
+    <div class="about-us-content">
+        <h2 data-language="about">About Us</h2>
+        <p data-language="aboutText">
+            Economica Limousine and Car Service is dedicated to providing
+            top-notch transportation services. Our fleet of luxury vehicles
+            and experienced drivers ensure a seamless and comfortable journey
+            for every client. We pride ourselves on reliability,
+            professionalism, and customer satisfaction.
+        </p>
+    </div>
+</section>
+
+<section class="services" id="services-content">
+    <div class="services-content">
+        <h2 data-language="services">Our Services</h2>
+
+        <p data-language="servicesText">
+            We provide transportation to airports including Philadelphia,
+            Newark, and New York. We are committed to providing efficient
+            and reliable transportation services.
+        </p>
+
+        <ul class="services-list">
+            <li>
+                <a>
+                    <i class="fa-solid fa-plane"></i>
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    <i class="fa-solid fa-business-time"></i>
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    <i class="fa-solid fa-briefcase"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<footer>
+<svg class="footer-wave" viewBox="0 0 120 28" preserveAspectRatio="none">
+    <defs>
+
+        <filter id="goo">
+            <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="1"
+                result="blur"
+            />
+
+            <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 13 -9"
+                result="goo"
+            />
+
+            <feBlend
+                in="SourceGraphic"
+                in2="goo"
+            />
+        </filter>
+
+        <path
+            id="wave"
+            d="M 0,10
+            C 30,10 30,15 60,15
+            90,15 90,10 120,10
+            150,10 150,15 180,15
+            210,15 210,10 240,10
+            v 28
+            h -240
+            z"
+        />
+    </defs>
+    
+    <use id="wave3" class="wave" href="#wave" x="0" y="-2"></use>
+    <use id="wave2" class="wave" href="#wave" x="0" y="0"></use>
+    <g class="gooeff" filter="url(#goo)">
+        <circle class="drop drop1" cx="20" cy="2" r="8.8"/>
+        <circle class="drop drop2" cx="25" cy="2.5" r="7.5"/>
+        <circle class="drop drop3" cx="16" cy="2.8" r="9.2"/>
+        <circle class="drop drop4" cx="18" cy="2" r="8.8"/>
+        <circle class="drop drop5" cx="22" cy="2.5" r="7.5"/>
+        <circle class="drop drop6" cx="26" cy="2.8" r="9.2"/>
+
+        <circle class="drop drop1" cx="5" cy="4.4" r="8.8"/>
+        <circle class="drop drop2" cx="5" cy="4.1" r="7.5"/>
+        <circle class="drop drop3" cx="8" cy="3.8" r="9.2"/>
+        <circle class="drop drop4" cx="3" cy="4.4" r="8.8"/>
+        <circle class="drop drop5" cx="7" cy="4.1" r="7.5"/>
+        <circle class="drop drop6" cx="10" cy="4.3" r="9.2"/>
+
+        <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8"/>
+        <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5"/>
+        <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2"/>
+        <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8"/>
+        <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5"/>
+        <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2"/>
+        <use id="wave1" class="wave" href="#wave" x="0" y="1"></use>
+    </g>
+</svg>
+
+
+<section class="information" id="Information-content">
+    <div class="information-content">
+        <h2 data-language="information">Our Information</h2>
+        <p data-language="available">
+        available 24/7
+        </p>
+            <nav class="information-navbar">
+                <a href="privacy_policy.html" data-language="privacy">Privacy Policy</a>
+            </nav>
+    </div>
+</section>
+
+
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2 data-language="contactTitle">Contact Us</h2>
+        <p data-language="contactText">
+            <span data-language="contactText"></span>Ready to book your ride? Get in touch with Economica and car service today!</span>
+        </p>
+    </div>
+</section>
+<ul class="social-icons">
+    <li>
+        <a href="https://www.instagram.com/economicataxi" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/people/Economica-Taxi/61577775136318" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+    </li>
+    <li>
+        <a href="mailto:info@limousine7carservice@gmail.com" aria-label="Email">
+            <i class="fa-regular fa-envelope"></i>
+        </a>
+    </li>
+    <li>
+        <a href="tel:+1610-477-7670" aria-label="Phone">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </li>
+</ul>
+<p class="copyright">
+    &copy; 2026 Economica Limousine and Car Service. <span data-language="rights"></span>All rights reserved.</span>
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+    
+
+</body>
+</html>
